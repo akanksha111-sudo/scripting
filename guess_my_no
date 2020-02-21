@@ -1,0 +1,23 @@
+#!/bin/bash
+
+systemno=$RANDOM
+no_of_chances=1
+for(( ; ; ))
+do
+   read -p "This is your chance no. $no_of_chances  #Guess my no." userno
+if [ $userno -eq $systemno ]
+  then
+   echo"Your guess is correct"
+   echo"you gusessed with $no_of_chances chances"
+   break
+else 
+ echo "Your guess is wrong"
+if [ $userno -ge $systemno ]
+  then
+   echo "please select some lesser value"
+  else
+  echo "please select some greater value"
+   fi
+ fi
+no_of_chances=$((no_of_chances+1))
+done
